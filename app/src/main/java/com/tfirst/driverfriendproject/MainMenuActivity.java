@@ -7,8 +7,8 @@ import android.view.View;
 import android.view.Window;
 import android.widget.Button;
 
+import com.tfirst.driverfriendproject.events.SendInformationActivity;
 import com.tfirst.driverfriendproject.map.GeneralMapActivity;
-import com.tfirst.driverfriendproject.map.SetLocationMapActivity;
 
 /**
  * Created by Stanislav Trushin on 18.11.2016.
@@ -26,13 +26,13 @@ public class MainMenuActivity extends Activity {
         buttonSendInformation = (Button) findViewById(R.id.buttonSendInformationMain);
     }
 
-    public void onClickToSendInformation(View v) {
-        Intent intent = new Intent(this, SetLocationMapActivity.class);
+    public void onClickToMapActivity(View v){
+        Intent intent = new Intent(this, GeneralMapActivity.class);
         startActivity(intent);
     }
 
-    public void onClickToMapActivity(View v){
-        Intent intent = new Intent(this, GeneralMapActivity.class);
+    public void onClickToSendInformation(View v){
+        Intent intent = new Intent(this, SendInformationActivity.class);
         startActivity(intent);
     }
 }

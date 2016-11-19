@@ -1,7 +1,8 @@
 package com.tfirst.driverfriendproject.connections;
 
-import android.app.Activity;
 import android.os.AsyncTask;
+
+import com.tfirst.driverfriendproject.events.SendInformationActivity;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
@@ -16,19 +17,22 @@ import java.net.Socket;
 
 public class ConnectionWithServer extends AsyncTask<String, Void, String> {
     private boolean isRunning = true;
-    public String result;
+    private SendInformationActivity sia;
+
+    public ConnectionWithServer(SendInformationActivity sia) {
+        this.sia = sia;
+    }
 
     @Override
-    //protected String doInBackground(Connection... connection) {
     protected String doInBackground(String... strings) {
         String line = null;
-        int serverPort = 3333; // здесь обязательно нужно указать порт к которому привязывается сервер.
-        String address = "10.212.1.186"; // это IP-адрес компьютера, где исполняется наша серверная программа.
+        int serverPort = 3333; // port
+        String address = "10.212.2.246"; // server's ip-address
         try {
             while (this.isRunning) {
-                InetAddress ipAddress = InetAddress.getByName(address); // создаем объект который отображает вышеописанный IP-адрес.
+                InetAddress ipAddress = InetAddress.getByName(address);
                 System.out.println("Any of you heard of a socket with IP address " + address + " and port " + serverPort + "?");
-                Socket socket = new Socket(ipAddress, serverPort); // создаем сокет используя IP-адрес и порт сервера.
+                Socket socket = new Socket(ipAddress, serverPort);
                 System.out.println("Yes! I just got hold of the program.");
 
                 InputStream inputStream = socket.getInputStream();
@@ -63,6 +67,6 @@ public class ConnectionWithServer extends AsyncTask<String, Void, String> {
     }
 
     protected void onPostExecute(String line) {
-        this.result = line;
+        sia.setToStringResult(line);
     }
 }

@@ -24,16 +24,16 @@
                 android:layout_height="80dp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginStart="20dp"
-                android:id="@+id/buttonFuelGetHelp"
-                android:text="Бензин"
+                android:id="@+id/buttonWheel"
+                android:text="Колесо"
                 android:layout_gravity="bottom"
                 android:layout_weight="1"/>
 
             <Button
                 android:layout_width="80dp"
                 android:layout_height="80dp"
-                android:id="@+id/buttonWheelGetHelp"
-                android:text="Колесо"
+                android:id="@+id/buttonFuel"
+                android:text="Бензин"
                 android:layout_gravity="bottom"
                 android:layout_weight="1"/>
 
@@ -42,8 +42,8 @@
                 android:layout_height="80dp"
                 android:layout_marginRight="20dp"
                 android:layout_marginEnd="20dp"
-                android:id="@+id/buttonZastrGetHelp"
-                android:text="Застрял"
+                android:id="@+id/buttonAccumulator"
+                android:text="Аккум."
                 android:layout_gravity="bottom"
                 android:layout_weight="1"/>
         </LinearLayout>
@@ -60,8 +60,8 @@
                 android:layout_height="80dp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginStart="20dp"
-                android:id="@+id/buttonAccumulatorGetHelp"
-                android:text="Аккум."
+                android:id="@+id/buttonZastr"
+                android:text="Zastryal"
                 android:layout_gravity="top"
                 android:layout_weight="1"/>
 

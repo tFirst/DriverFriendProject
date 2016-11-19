@@ -30,5 +30,5 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="20dp"
         android:id="@+id/buttonNextActivityGetHelp"
-        android:onClick="onClickButtonNextGetHelp"/>
+        android:onClick="onClickToNextStep"/>
 </RelativeLayout>

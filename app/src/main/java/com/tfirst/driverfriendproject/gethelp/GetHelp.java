@@ -27,7 +27,8 @@ public class GetHelp extends Activity {
         buttonNextActivityGetHelp = (Button) findViewById(R.id.buttonNextActivityGetHelp);
     }
 
-    public void onClickButtonNextGetHelp(View v) {
-        Intent intent = new Intent(GetHelp.this, GetHelpAddress.class);
+    public void onClickToNextStep(View v) {
+        Intent intent = new Intent(GetHelp.this, GetHelpChooseType.class);
+        startActivity(intent);
     }
 }
