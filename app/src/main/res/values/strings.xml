@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name">DriverFriendProject</string>
+    <string name="textFromButtonChat">Чат</string>
+    <string name="textFromButtonSendInformationMain">Информирование</string>
+    <string name="textFromButtonSOS">Запросить помощь</string>
+    <string name="textFromButtonMap">Карта</string>
+    <string name="textFromButtonServices">Услуги</string>
+    <string name="textFromButtonFastCall">Быстрый набор</string>
+    <string name="textFromButtonShowEvents">Просмотреть события</string>
+    <string name="textFromButtonSettings">Настройки</string>
+    <string name="textFromButtonAdoutProgram">О программе</string>
+    <string name="textFromTextViewYourLocation">Ваше местоположение:</string>
+    <string name="textFromButtonSendInformationSI">Проинформировать</string>
+    <string name="textFromButtonShowLocationOnMap">Показать на карте</string>
+    <string name="textFromTextViewYourLocationGetHelp">Ваше местоположение:</string>
+    <string name="textFromButtonNextActivityGetHelp">Далее</string>
 </resources>

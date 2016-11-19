@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:id="@+id/relativeLayoutId">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:weightSum="3"
+        android:orientation="vertical"
+        android:layout_marginTop="35dp"
+        android:layout_marginBottom="35dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:weightSum="3"
+            android:layout_weight="1">
+            <Button
+                android:text="@string/textFromButtonChat"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginStart="20dp"
+                android:id="@+id/buttonChat"
+                android:layout_weight="1"
+                android:layout_gravity="center"/>
+
+            <Button
+                android:text="@string/textFromButtonSendInformationMain"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:id="@+id/buttonSendInformationMain"
+                android:onClick="onClickToSendInformation"
+                android:layout_weight="1"
+                android:layout_gravity="center"/>
+
+            <Button
+                android:text="@string/textFromButtonSOS"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginEnd="20dp"
+                android:id="@+id/buttonSOS"
+                android:layout_weight="1"
+                android:layout_gravity="center"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:weightSum="3"
+            android:layout_weight="1">
+            <Button
+                android:text="@string/textFromButtonMap"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginStart="20dp"
+                android:id="@+id/buttonMap"
+                android:layout_weight="1"
+                android:layout_gravity="center"/>
+
+            <Button
+                android:text="@string/textFromButtonServices"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:id="@+id/buttonServices"
+                android:layout_weight="1"
+                android:layout_gravity="center"/>
+
+            <Button
+                android:text="@string/textFromButtonFastCall"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginEnd="20dp"
+                android:id="@+id/buttonFastCall"
+                android:layout_weight="1"
+                android:layout_gravity="center"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:weightSum="3"
+            android:layout_weight="1">
+        <Button
+            android:text="@string/textFromButtonShowEvents"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:id="@+id/buttonShowEvents"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:layout_marginLeft="20dp"
+            android:layout_marginStart="20dp"/>
+
+        <Button
+            android:text="@string/textFromButtonSettings"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:id="@+id/buttonSettings"
+            android:layout_weight="1"
+            android:layout_gravity="center"/>
+
+        <Button
+            android:text="@string/textFromButtonAdoutProgram"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:id="@+id/buttonAboutProgram"
+            android:layout_weight="1"
+            android:layout_marginRight="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_gravity="center"/>
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>
