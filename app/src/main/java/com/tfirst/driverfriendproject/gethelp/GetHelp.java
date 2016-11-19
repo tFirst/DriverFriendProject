@@ -1,7 +1,9 @@
 package com.tfirst.driverfriendproject.gethelp;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
@@ -23,5 +25,9 @@ public class GetHelp extends Activity {
 
         editTextYourLocationGetHelp = (EditText) findViewById(R.id.editTextYourLocationGetHelp);
         buttonNextActivityGetHelp = (Button) findViewById(R.id.buttonNextActivityGetHelp);
+    }
+
+    public void onClickButtonNextGetHelp(View v) {
+        Intent intent = new Intent(GetHelp.this, GetHelpAddress.class);
     }
 }

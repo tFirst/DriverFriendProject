@@ -20,16 +20,16 @@
                 android:layout_height="80dp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginStart="20dp"
-                android:text="Button"
-                android:id="@+id/button"
+                android:text="@string/textFromButtonDPSFastCall"
+                android:id="@+id/buttonDPSFastCall"
                 android:layout_weight="1"
                 android:layout_gravity="bottom"/>
 
             <Button
                 android:layout_width="80dp"
                 android:layout_height="80dp"
-                android:text="Button"
-                android:id="@+id/button2"
+                android:text="@string/textFromButtonFastHelpFastCall"
+                android:id="@+id/buttonFastHelp"
                 android:layout_weight="1"
                 android:layout_gravity="bottom"/>
 
@@ -38,7 +38,7 @@
                 android:layout_height="80dp"
                 android:layout_marginRight="20dp"
                 android:layout_marginEnd="20dp"
-                android:text="Button"
+                android:text="Unknown"
                 android:id="@+id/button3"
                 android:layout_weight="1"
                 android:layout_gravity="bottom"/>
@@ -54,7 +54,7 @@
                 android:layout_height="80dp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginStart="20dp"
-                android:text="Button"
+                android:text="Unknown"
                 android:id="@+id/button4"
                 android:layout_weight="1"
                 android:layout_gravity="top"/>
@@ -62,7 +62,7 @@
             <Button
                 android:layout_width="80dp"
                 android:layout_height="80dp"
-                android:text="Button"
+                android:text="Unknown"
                 android:id="@+id/button5"
                 android:layout_weight="1"
                 android:layout_gravity="top"/>
@@ -72,7 +72,7 @@
                 android:layout_height="80dp"
                 android:layout_marginRight="20dp"
                 android:layout_marginEnd="20dp"
-                android:text="Button"
+                android:text="Unknown"
                 android:id="@+id/button6"
                 android:layout_weight="1"
                 android:layout_gravity="top"/>

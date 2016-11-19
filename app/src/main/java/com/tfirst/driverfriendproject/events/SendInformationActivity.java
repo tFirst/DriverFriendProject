@@ -8,6 +8,7 @@ import android.view.Window;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioGroup;
 import android.widget.SimpleAdapter;
 import android.widget.Spinner;
 import android.widget.SpinnerAdapter;
@@ -21,7 +22,7 @@ import com.tfirst.driverfriendproject.connections.ConnectionWithServer;
 
 public class SendInformationActivity extends Activity {
 
-    private Spinner spinnerTypesOfEvents;
+    private RadioGroup radioGroup;
     private Button buttonSendInformationSI;
     private EditText editTextYourLocation;
 
@@ -30,23 +31,8 @@ public class SendInformationActivity extends Activity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.send_information);
 
-        spinnerTypesOfEvents = (Spinner) findViewById(R.id.spinnerTypesOfEvents);
+        radioGroup = (RadioGroup) findViewById(R.id.radioGroupSendInfo);
         editTextYourLocation = (EditText) findViewById(R.id.editTextYourLocation);
         buttonSendInformationSI = (Button) findViewById(R.id.buttonSendInformationSI);
-
-        fillingSpinner();
-    }
-
-    private String[] connection() {
-        ConnectionWithServer connectionWithServer = new ConnectionWithServer();
-        connectionWithServer.execute("fillingspinner");
-        return connectionWithServer.result.split(",");
-    }
-
-    private void fillingSpinner() {
-        String[] resultsFromServer = connection();
-        ArrayAdapter<String> arrayAdapter =
-                new ArrayAdapter<>(this, R.layout.send_information, resultsFromServer);
-        spinnerTypesOfEvents.setAdapter(arrayAdapter);
     }
 }
