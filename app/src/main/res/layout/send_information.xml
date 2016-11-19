@@ -2,43 +2,6 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent" android:layout_height="match_parent">
 
-    <Spinner
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="35dp"
-        android:id="@+id/spinnerTypesOfEvents" />
-
-    <TextView
-        android:text="@string/textFromTextViewYourLocation"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/spinnerTypesOfEvents"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="40dp"
-        android:textSize="20sp"
-        android:id="@+id/textViewYourLocation" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:ems="10"
-        android:layout_below="@+id/textViewYourLocation"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"
-        android:id="@+id/editTextYourLocation" />
-    <Button
-        android:text="@string/textFromButtonShowLocationOnMap"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/editTextYourLocation"
-        android:layout_marginTop="30dp"
-        android:layout_centerHorizontal="true"
-        android:id="@+id/buttonShowLocationOnMap"
-        android:onClick="onPickButtonClick"/>
-
     <Button
         android:text="@string/textFromButtonSendInformationSI"
         android:layout_width="wrap_content"
@@ -48,4 +11,58 @@
         android:layout_marginBottom="20dp"
         android:id="@+id/buttonSendInformationSI" />
 
+    <Button
+        android:text="@string/textFromButtonShowLocationOnMap"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/buttonShowLocationOnMap"
+        android:onClick="onPickButtonClick"
+        android:layout_above="@+id/buttonSendInformationSI"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="80dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/editTextYourLocation"
+        android:layout_above="@+id/buttonShowLocationOnMap"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="16dp" />
+
+    <TextView
+        android:text="@string/textFromTextViewYourLocation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:id="@+id/textViewYourLocation"
+        android:layout_above="@+id/editTextYourLocation"
+        android:layout_centerHorizontal="true" />
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="70dp" >
+
+        <RadioButton
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="ДТП"
+            android:id="@+id/radioButtonDTP"/>
+
+        <RadioButton
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="ДПС"
+            android:id="@+id/radioButtonDPS"/>
+
+        <RadioButton
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Дорожные работы"
+            android:id="@+id/radioButtonRW"/>
+    </RadioGroup>
 </RelativeLayout>

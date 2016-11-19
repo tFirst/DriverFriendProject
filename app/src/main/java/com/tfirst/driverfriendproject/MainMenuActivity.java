@@ -7,12 +7,7 @@ import android.view.View;
 import android.view.Window;
 import android.widget.Button;
 
-import com.google.android.gms.common.GooglePlayServicesNotAvailableException;
-import com.google.android.gms.common.GooglePlayServicesRepairableException;
-import com.google.android.gms.location.places.Place;
-import com.google.android.gms.location.places.ui.PlacePicker;
-import com.tfirst.driverfriendproject.events.SendInformationActivity;
-import com.tfirst.driverfriendproject.events.SetLocationMapActivity;
+import com.tfirst.driverfriendproject.map.SetLocationMapActivity;
 
 /**
  * Created by Stanislav Trushin on 18.11.2016.

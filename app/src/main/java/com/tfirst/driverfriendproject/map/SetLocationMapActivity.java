@@ -1,4 +1,4 @@
-package com.tfirst.driverfriendproject.events;
+package com.tfirst.driverfriendproject.map;
 
 import android.app.Activity;
 import android.content.Intent;
