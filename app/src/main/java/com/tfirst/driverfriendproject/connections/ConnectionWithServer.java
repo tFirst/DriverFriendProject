@@ -1,8 +1,12 @@
 package com.tfirst.driverfriendproject.connections;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.AsyncTask;
 
+import com.tfirst.driverfriendproject.MainMenuActivity;
 import com.tfirst.driverfriendproject.events.SendInformationActivity;
+import com.tfirst.driverfriendproject.gethelp.GetHelp;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
@@ -17,10 +21,10 @@ import java.net.Socket;
 
 public class ConnectionWithServer extends AsyncTask<String, Void, String> {
     private boolean isRunning = true;
-    private SendInformationActivity sia;
+    private Activity activity;
 
-    public ConnectionWithServer(SendInformationActivity sia) {
-        this.sia = sia;
+    public ConnectionWithServer(Activity activity) {
+        this.activity = activity;
     }
 
     @Override
@@ -67,6 +71,7 @@ public class ConnectionWithServer extends AsyncTask<String, Void, String> {
     }
 
     protected void onPostExecute(String line) {
-        sia.setToStringResult(line);
+        activity.startActivity(new Intent(activity, MainMenuActivity.class));
     }
+
 }

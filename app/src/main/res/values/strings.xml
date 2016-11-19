@@ -29,9 +29,9 @@
     <string name="textFromButtonSendInformationSI">Проинформировать</string>
     <string name="textFromButtonShowLocationOnMap">Указать местоположение</string>
     <string name="textFromTextViewYourLocationGetHelp">Ваше местоположение:</string>
-    <string name="textFromButtonNextActivityGetHelp">Далее</string>
     <string name="textFromButtonDPSFastCall">ДПС</string>
     <string name="textFromButtonFastHelpFastCall">Скорая</string>
+    <string name="textFromButtonGoToMapGetHelp">Перейти к карте</string>
 
 
 </resources>
