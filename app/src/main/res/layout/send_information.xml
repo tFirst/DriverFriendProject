@@ -2,68 +2,83 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent" android:layout_height="match_parent">
 
-    <Button
-        android:text="@string/textFromButtonSendInformationSI"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="20dp"
-        android:id="@+id/buttonSendInformationSI" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:weightSum="10"
+        android:orientation="vertical">
 
-    <Button
-        android:text="@string/textFromButtonShowLocationOnMap"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/buttonShowLocationOnMap"
-        android:onClick="onPickButtonClick"
-        android:layout_above="@+id/buttonSendInformationSI"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="80dp" />
+        <TextView
+            android:text="@string/textFromTextViewYourLocation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:id="@+id/textViewYourLocation"
+            android:layout_marginTop="20dp"
+            android:layout_weight="1"
+            android:layout_gravity="center"/>
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:ems="10"
-        android:id="@+id/editTextYourLocation"
-        android:layout_above="@+id/buttonShowLocationOnMap"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="16dp" />
+        <RadioGroup
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:id="@+id/radioGroupSendInformation"
+            android:layout_weight="3"
+            android:layout_gravity="center_horizontal">
 
-    <TextView
-        android:text="@string/textFromTextViewYourLocation"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="20sp"
-        android:id="@+id/textViewYourLocation"
-        android:layout_above="@+id/editTextYourLocation"
-        android:layout_centerHorizontal="true" />
+            <RadioButton
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="ДТП"
+                android:id="@+id/radioButtonDTP"
+                android:layout_weight="1"/>
 
-    <RadioGroup
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="70dp"
-        android:id="@+id/radioGroupSendInfo">
+            <RadioButton
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Дорожные работы"
+                android:id="@+id/radioButtonRW"
+                android:layout_weight="1"/>
 
-        <RadioButton
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="ДТП"
-            android:id="@+id/radioButtonDTP"/>
+            <RadioButton
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="ДПС"
+                android:id="@+id/radioButtonDPS"
+                android:layout_weight="1"/>
 
-        <RadioButton
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="ДПС"
-            android:id="@+id/radioButtonDPS"/>
+        </RadioGroup>
 
-        <RadioButton
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="Дорожные работы"
-            android:id="@+id/radioButtonRW"/>
-    </RadioGroup>
+        <Button
+            android:text="@string/textFromButtonShowLocationOnMap"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/buttonShowLocationOnMap"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:onClick="onPickButtonClick"/>
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/editTextYourLocation"
+            android:layout_marginBottom="10dp"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"/>
+
+        <Button
+            android:text="@string/textFromButtonSendInformationSI"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="70dp"
+            android:id="@+id/buttonSendInformationSI"
+            android:onClick="onClickToSendInformation"
+            android:layout_weight="4"
+            android:layout_gravity="center"/>
+    </LinearLayout>
+
 </RelativeLayout>
