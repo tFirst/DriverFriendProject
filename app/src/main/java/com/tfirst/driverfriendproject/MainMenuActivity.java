@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.Window;
 import android.widget.Button;
 
+import com.tfirst.driverfriendproject.map.GeneralMapActivity;
 import com.tfirst.driverfriendproject.map.SetLocationMapActivity;
 
 /**
@@ -16,7 +17,6 @@ import com.tfirst.driverfriendproject.map.SetLocationMapActivity;
 public class MainMenuActivity extends Activity {
 
     private Button buttonSendInformation;
-    final int REQUEST_PLACE_PICKER = 1;
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,6 +28,11 @@ public class MainMenuActivity extends Activity {
 
     public void onClickToSendInformation(View v) {
         Intent intent = new Intent(this, SetLocationMapActivity.class);
+        startActivity(intent);
+    }
+
+    public void onClickToMapActivity(View v){
+        Intent intent = new Intent(this, GeneralMapActivity.class);
         startActivity(intent);
     }
 }
