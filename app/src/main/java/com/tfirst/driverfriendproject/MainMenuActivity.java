@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.Window;
 import android.widget.Button;
 
+import com.tfirst.driverfriendproject.chat.Chat;
 import com.tfirst.driverfriendproject.events.SendInformationActivity;
 import com.tfirst.driverfriendproject.map.GeneralMapActivity;
 
@@ -22,7 +23,6 @@ public class MainMenuActivity extends Activity {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.main_menu);
-
         buttonSendInformation = (Button) findViewById(R.id.buttonSendInformationMain);
     }
 
@@ -33,6 +33,11 @@ public class MainMenuActivity extends Activity {
 
     public void onClickToSendInformation(View v){
         Intent intent = new Intent(this, SendInformationActivity.class);
+        startActivity(intent);
+    }
+
+    public void onClickToChat(View v){
+        Intent intent = new Intent(this, Chat.class);
         startActivity(intent);
     }
 }

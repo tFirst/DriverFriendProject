@@ -4,6 +4,10 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+    <permission android:name="com.tfirst.driverfriendproject.permission.C2D_MESSAGE" android:protectionLevel="signature" />
+    <uses-permission android:name="com.tfirst.driverfriendproject.permission.C2D_MESSAGE" />
 
     <!--
          The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
@@ -39,6 +43,27 @@
         <activity
             android:name=".events.SendInformationActivity"
             android:label="@string/app_name" />
+
+        <activity
+            android:name=".chat.Chat"
+            android:label="@string/app_name" />
+
+        <activity
+            android:name=".chat.LoginActivity"
+            android:label="@string/app_name" />
+
+        <receiver android:name=".chat.gcm.GcmBroadcastReceiver"  android:permission="com.google.android.c2dm.permission.SEND" >
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+                <category android:name="your.package.name" />
+            </intent-filter>
+        </receiver>
+
+        <service android:name=".chat.gcm.GcmIntentService"/>
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
 
     </application>
 

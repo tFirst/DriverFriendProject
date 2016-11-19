@@ -18,6 +18,9 @@ import com.google.android.gms.location.places.ui.PlacePicker;
 import com.tfirst.driverfriendproject.R;
 import com.tfirst.driverfriendproject.connections.ConnectionWithServer;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 /**
  * Created by Stanislav Trushin on 18.11.2016.
  */
@@ -31,6 +34,9 @@ public class SendInformationActivity extends Activity {
     private int num;
     private String result;
     final int REQUEST_PLACE_PICKER = 1;
+    private String address;
+    private String description;
+    private String latlng;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -95,11 +101,11 @@ public class SendInformationActivity extends Activity {
             // The user has selected a place. Extract the name and address.
             final Place place = PlacePicker.getPlace(data, this);
 
-            final CharSequence name = place.getName();
-            final CharSequence address = place.getAddress();
+            latlng = place.getLatLng().latitude + ":" + place.getLatLng().longitude;
+            final String address = place.getAddress().toString();
 
-            System.out.println(name);
-            System.out.println(address);
+            System.out.println(latlng);
+            this.address = address;
 
         } else {
             super.onActivityResult(requestCode, resultCode, data);
@@ -109,19 +115,26 @@ public class SendInformationActivity extends Activity {
     public void onClickToSendInformation(View v) {
         ConnectionWithServer connectionWithServer =
                 new ConnectionWithServer(this);
+
+        description = editTextYourLocation.getText().toString();
+        if (description.isEmpty()){
+            description = " ";
+        }
+
         switch (this.num) {
             case 1:
                 connectionWithServer
-                        .execute("select:events:types:address:crush");
-                //.execute("insert:events:crash:address:description");
+                        //.execute("select:events:types:" +  address + ":crush");
+                .execute("insert:events:crash:" + address + ":" + description + ":" + latlng);
                 break;
             case 2:
                 connectionWithServer
-                        .execute("insert:events:road_works:address:description");
+                        .execute("insert:events:rps:" + address + ":" + description + ":" + latlng);
                 break;
             case 3:
                 connectionWithServer
-                        .execute("insert:events:rps:address:description");
+                        .execute("insert:events:road_works:" + address + ":" + description + ":" + latlng);
+
                 break;
             default:
                 break;
