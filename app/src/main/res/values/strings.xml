@@ -1,5 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">DriverFriendProject</string>
+
+    <string name="app_name" translatable="false">DriverFriend</string>
+    <string name="hello_world" translatable="false">Hello world!</string>
+    <string name="action_settings" translatable="false">Settings</string>
+    <string name="action_gcm_register" translatable="false">GCM Register</string>
+    <string name="action_gcm_unregister" translatable="false">GCM Unregister</string>
+    <string name="title_activity_login" translatable="false">Login</string>
+    <string name="login" translatable="false">Choose a username:</string>
+    <string name="username" translatable="false">Username</string>
+    <string name="login_submit" translatable="false">Join the Chat!</string>
+
+    <string name="enter_new_channel" translatable="false">Enter new channel:</string>
+    <string name="send_message" translatable="false">Send a message...</string>
+    <string name="action_sign_out" translatable="false">Sign Out</string>
+    <string name="here_now" translatable="false">Here Now:</string>
+
     <string name="textFromButtonChat">Чат</string>
     <string name="textFromButtonSendInformationMain">Информирование</string>
     <string name="textFromButtonSOS">Запросить помощь</string>
@@ -16,4 +32,6 @@
     <string name="textFromButtonNextActivityGetHelp">Далее</string>
     <string name="textFromButtonDPSFastCall">ДПС</string>
     <string name="textFromButtonFastHelpFastCall">Скорая</string>
+
+
 </resources>

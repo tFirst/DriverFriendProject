@@ -36,15 +36,15 @@
             <RadioButton
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="Дорожные работы"
-                android:id="@+id/radioButtonRW"
+                android:text="ДПС"
+                android:id="@+id/radioButtonDPS"
                 android:layout_weight="1"/>
 
             <RadioButton
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="ДПС"
-                android:id="@+id/radioButtonDPS"
+                android:text="Дорожные работы"
+                android:id="@+id/radioButtonRW"
                 android:layout_weight="1"/>
 
         </RadioGroup>

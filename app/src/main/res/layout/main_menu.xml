@@ -23,7 +23,8 @@
                 android:layout_marginStart="20dp"
                 android:id="@+id/buttonChat"
                 android:layout_weight="1"
-                android:layout_gravity="center"/>
+                android:layout_gravity="center"
+                android:onClick="onClickToChat"/>
 
             <Button
                 android:text="@string/textFromButtonSendInformationMain"
