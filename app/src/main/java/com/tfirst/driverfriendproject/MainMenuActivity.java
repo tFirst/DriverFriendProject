@@ -7,7 +7,12 @@ import android.view.View;
 import android.view.Window;
 import android.widget.Button;
 
+import com.google.android.gms.common.GooglePlayServicesNotAvailableException;
+import com.google.android.gms.common.GooglePlayServicesRepairableException;
+import com.google.android.gms.location.places.Place;
+import com.google.android.gms.location.places.ui.PlacePicker;
 import com.tfirst.driverfriendproject.events.SendInformationActivity;
+import com.tfirst.driverfriendproject.events.SetLocationMapActivity;
 
 /**
  * Created by Stanislav Trushin on 18.11.2016.
@@ -16,6 +21,7 @@ import com.tfirst.driverfriendproject.events.SendInformationActivity;
 public class MainMenuActivity extends Activity {
 
     private Button buttonSendInformation;
+    final int REQUEST_PLACE_PICKER = 1;
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,7 +32,7 @@ public class MainMenuActivity extends Activity {
     }
 
     public void onClickToSendInformation(View v) {
-        new Intent(MainMenuActivity.this, SendInformationActivity.class);
-        setContentView(R.layout.send_information);
+        Intent intent = new Intent(this, SetLocationMapActivity.class);
+        startActivity(intent);
     }
 }

@@ -36,7 +36,8 @@
         android:layout_below="@+id/editTextYourLocation"
         android:layout_marginTop="30dp"
         android:layout_centerHorizontal="true"
-        android:id="@+id/buttonShowLocationOnMap" />
+        android:id="@+id/buttonShowLocationOnMap"
+        android:onClick="onPickButtonClick"/>
 
     <Button
         android:text="@string/textFromButtonSendInformationSI"
