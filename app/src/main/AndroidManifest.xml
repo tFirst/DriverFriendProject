@@ -35,6 +35,10 @@
             android:name=".map.SetLocationMapActivity"
             android:label="@string/app_name" />
 
+        <activity
+            android:name=".map.GeneralMapActivity"
+            android:label="@string/app_name" />
+
     </application>
 
 </manifest>
