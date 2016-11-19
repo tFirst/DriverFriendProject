@@ -52,6 +52,10 @@
             android:name=".chat.LoginActivity"
             android:label="@string/app_name" />
 
+        <activity
+            android:name=".gethelp.GetHelp"
+            android:label="@string/app_name" />
+
         <receiver android:name=".chat.gcm.GcmBroadcastReceiver"  android:permission="com.google.android.c2dm.permission.SEND" >
             <intent-filter>
                 <action android:name="com.google.android.c2dm.intent.RECEIVE" />

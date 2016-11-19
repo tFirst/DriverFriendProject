@@ -28,6 +28,7 @@ import java.util.Arrays;
 public class SendInformationActivity extends Activity {
 
     private Button buttonSendInformationSI;
+    private Button buttonShowLocationOnMap;
     private EditText editTextYourLocation;
     private RadioGroup radioGroup;
     private TextView textView;
@@ -48,6 +49,8 @@ public class SendInformationActivity extends Activity {
         buttonSendInformationSI = (Button) findViewById(R.id.buttonSendInformationSI);
         radioGroup = (RadioGroup) findViewById(R.id.radioGroupSendInformation);
         textView = (TextView) findViewById(R.id.textViewYourLocation);
+        buttonShowLocationOnMap = (Button) findViewById(R.id.buttonShowLocationOnMap);
+        buttonShowLocationOnMap.setEnabled(false);
 
         radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
@@ -59,12 +62,15 @@ public class SendInformationActivity extends Activity {
                         break;
                     case R.id.radioButtonDTP:
                         defineRadioButtonClick(1);
+                        buttonShowLocationOnMap.setEnabled(true);
                         break;
                     case R.id.radioButtonDPS:
                         defineRadioButtonClick(2);
+                        buttonShowLocationOnMap.setEnabled(true);
                         break;
                     case R.id.radioButtonRW:
                         defineRadioButtonClick(3);
+                        buttonShowLocationOnMap.setEnabled(true);
                         break;
                     default:
                         break;

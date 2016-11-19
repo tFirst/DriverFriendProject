@@ -9,6 +9,7 @@ import android.widget.Button;
 
 import com.tfirst.driverfriendproject.chat.Chat;
 import com.tfirst.driverfriendproject.events.SendInformationActivity;
+import com.tfirst.driverfriendproject.gethelp.GetHelp;
 import com.tfirst.driverfriendproject.map.GeneralMapActivity;
 
 /**
@@ -38,6 +39,11 @@ public class MainMenuActivity extends Activity {
 
     public void onClickToChat(View v){
         Intent intent = new Intent(this, Chat.class);
+        startActivity(intent);
+    }
+
+    public void onClickToGetHelp(View v){
+        Intent intent = new Intent(this, GetHelp.class);
         startActivity(intent);
     }
 }
