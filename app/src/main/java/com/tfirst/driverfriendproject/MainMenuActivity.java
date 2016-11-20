@@ -12,10 +12,6 @@ import com.tfirst.driverfriendproject.events.SendInformationActivity;
 import com.tfirst.driverfriendproject.gethelp.GetHelp;
 import com.tfirst.driverfriendproject.map.GeneralMapActivity;
 
-/**
- * Created by Stanislav Trushin on 18.11.2016.
- */
-
 public class MainMenuActivity extends Activity {
 
     private Button buttonSendInformation;

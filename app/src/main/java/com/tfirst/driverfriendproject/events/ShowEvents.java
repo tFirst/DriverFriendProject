@@ -7,10 +7,6 @@ import android.view.Window;
 
 import com.tfirst.driverfriendproject.R;
 
-/**
- * Created by Stanislav Trushin on 19.11.2016.
- */
-
 public class ShowEvents extends Activity {
 
     public void onCreate(Bundle savedInstanceState) {

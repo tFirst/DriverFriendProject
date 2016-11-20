@@ -4,10 +4,6 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.Window;
 
-/**
- * Created by Stanislav Trushin on 19.11.2016.
- */
-
 public class AboutProgram extends Activity {
 
     public void onCreate(Bundle savedInstanceState) {

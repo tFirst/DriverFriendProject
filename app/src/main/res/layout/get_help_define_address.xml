@@ -74,7 +74,7 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginStart="20dp"
                 android:id="@+id/buttonZastr"
-                android:text="Zastryal"
+                android:text="Застрял"
                 android:layout_gravity="top"
                 android:layout_weight="1"
                 android:onClick="onClickButtonZastr"/>

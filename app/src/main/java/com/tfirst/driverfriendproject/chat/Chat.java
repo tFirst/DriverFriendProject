@@ -128,12 +128,12 @@ public class Chat extends ListActivity {
             case R.id.action_sign_out:
                 signOut();
                 return true;
-            case R.id.action_gcm_register:
+            /*case R.id.action_gcm_register:
                 gcmRegister();
                 return true;
             case R.id.action_gcm_unregister:
                 gcmUnregister();
-                return true;
+                return true;*/
         }
         return super.onOptionsItemSelected(item);
     }

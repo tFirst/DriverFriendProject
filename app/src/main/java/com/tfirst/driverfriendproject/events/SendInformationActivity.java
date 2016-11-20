@@ -18,13 +18,6 @@ import com.google.android.gms.location.places.ui.PlacePicker;
 import com.tfirst.driverfriendproject.R;
 import com.tfirst.driverfriendproject.connections.ConnectionWithServer;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-
-/**
- * Created by Stanislav Trushin on 18.11.2016.
- */
-
 public class SendInformationActivity extends Activity {
 
     private Button buttonSendInformationSI;
@@ -88,8 +81,6 @@ public class SendInformationActivity extends Activity {
             PlacePicker.IntentBuilder intentBuilder =
                     new PlacePicker.IntentBuilder();
             Intent intent = intentBuilder.build(this);
-            // Start the intent by requesting a result,
-            // identified by a request code.
             startActivityForResult(intent, REQUEST_PLACE_PICKER);
 
         } catch (GooglePlayServicesRepairableException | GooglePlayServicesNotAvailableException e) {
@@ -104,7 +95,6 @@ public class SendInformationActivity extends Activity {
         if (requestCode == REQUEST_PLACE_PICKER
                 && resultCode == Activity.RESULT_OK) {
 
-            // The user has selected a place. Extract the name and address.
             final Place place = PlacePicker.getPlace(data, this);
 
             latlng = place.getLatLng().latitude + ":" + place.getLatLng().longitude;
@@ -123,15 +113,14 @@ public class SendInformationActivity extends Activity {
                 new ConnectionWithServer(this);
 
         description = editTextYourLocation.getText().toString();
-        if (description.isEmpty()){
+        if (description.isEmpty()) {
             description = " ";
         }
 
         switch (this.num) {
             case 1:
                 connectionWithServer
-                        //.execute("select:events:types:" +  address + ":crush");
-                .execute("insert:events:crash:" + address + ":" + description + ":" + latlng);
+                        .execute("insert:events:crash:" + address + ":" + description + ":" + latlng);
                 break;
             case 2:
                 connectionWithServer
@@ -145,10 +134,5 @@ public class SendInformationActivity extends Activity {
             default:
                 break;
         }
-    }
-
-    public void setToStringResult(String line) {
-        this.result = line;
-        Toast.makeText(getApplicationContext(), this.result, Toast.LENGTH_SHORT).show();
     }
 }
