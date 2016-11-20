@@ -115,11 +115,8 @@ public class GeneralMapActivity extends FragmentActivity implements OnMapReadyCa
 
     public void setResult(String line) {
         String[] parseLocation = line.split("@");
-        System.out.println("parselocation length = " + parseLocation.length);
         for (int i = 0; i < parseLocation.length; i++) {
-            System.out.println(parseLocation[i]);
             String[] childrenParseLocation = parseLocation[i].split(":");
-            System.out.println(Arrays.toString(childrenParseLocation));
             addMarkerToMap(childrenParseLocation[0], Double.parseDouble(childrenParseLocation[1]),
                     Double.parseDouble(childrenParseLocation[2]), childrenParseLocation[3]);
         }
