@@ -22,10 +22,6 @@ import com.tfirst.driverfriendproject.R;
 import com.tfirst.driverfriendproject.connections.ConnectionWithServer;
 import com.tfirst.driverfriendproject.events.SendInformationActivity;
 
-/**
- * Created by Stanislav Trushin on 18.11.2016.
- */
-
 public class GetHelp extends Activity {
 
     private Button buttonWheel;
@@ -36,10 +32,6 @@ public class GetHelp extends Activity {
     private String address;
     private String latlng;
     final String description = " ";
-    /**
-     * ATTENTION: This was auto-generated to implement the App Indexing API.
-     * See https://g.co/AppIndexing/AndroidStudio for more information.
-     */
     private GoogleApiClient client;
 
     @Override
@@ -57,8 +49,6 @@ public class GetHelp extends Activity {
         buttonFuel.setEnabled(false);
         buttonWheel.setEnabled(false);
         buttonZastr.setEnabled(false);
-        // ATTENTION: This was auto-generated to implement the App Indexing API.
-        // See https://g.co/AppIndexing/AndroidStudio for more information.
         client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
     }
 
@@ -81,7 +71,6 @@ public class GetHelp extends Activity {
         if (requestCode == REQUEST_PLACE_PICKER
                 && resultCode == Activity.RESULT_OK) {
 
-            // The user has selected a place. Extract the name and address.
             final Place place = PlacePicker.getPlace(data, this);
 
             latlng = place.getLatLng().latitude + ":" + place.getLatLng().longitude;
@@ -128,10 +117,6 @@ public class GetHelp extends Activity {
                 .execute("insert:events:zastr:" + address + ":" + description + ":" + latlng);
     }
 
-    /**
-     * ATTENTION: This was auto-generated to implement the App Indexing API.
-     * See https://g.co/AppIndexing/AndroidStudio for more information.
-     */
     public Action getIndexApiAction() {
         Thing object = new Thing.Builder()
                 .setName("GetHelp Page") // TODO: Define a title for the content shown.
@@ -147,9 +132,6 @@ public class GetHelp extends Activity {
     @Override
     public void onStart() {
         super.onStart();
-
-        // ATTENTION: This was auto-generated to implement the App Indexing API.
-        // See https://g.co/AppIndexing/AndroidStudio for more information.
         client.connect();
         AppIndex.AppIndexApi.start(client, getIndexApiAction());
     }
@@ -157,9 +139,6 @@ public class GetHelp extends Activity {
     @Override
     public void onStop() {
         super.onStop();
-
-        // ATTENTION: This was auto-generated to implement the App Indexing API.
-        // See https://g.co/AppIndexing/AndroidStudio for more information.
         AppIndex.AppIndexApi.end(client, getIndexApiAction());
         client.disconnect();
     }

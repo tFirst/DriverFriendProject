@@ -8,10 +8,6 @@ import com.tfirst.driverfriendproject.R;
 
 import java.security.AccessControlContext;
 
-/**
- * Created by Stanislav Trushin on 19.11.2016.
- */
-
 public class FastCall extends Activity {
 
     public void onCreate(Bundle savedInstanceState) {

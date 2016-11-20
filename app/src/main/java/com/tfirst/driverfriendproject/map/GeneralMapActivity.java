@@ -1,6 +1,8 @@
 package com.tfirst.driverfriendproject.map;
 
 import android.content.pm.PackageManager;
+import android.database.Cursor;
+import android.location.Address;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -9,17 +11,22 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.content.ContextCompat;
 
+import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
+import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.tfirst.driverfriendproject.R;
+import com.tfirst.driverfriendproject.connections.ConnectionWithServer;
 
-/**
- * Created by valer on 19.11.2016.
- */
+import java.sql.CallableStatement;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 public class GeneralMapActivity extends FragmentActivity implements OnMapReadyCallback {
 
@@ -34,24 +41,47 @@ public class GeneralMapActivity extends FragmentActivity implements OnMapReadyCa
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+
+        ConnectionWithServer connectionWithServer = new ConnectionWithServer(this);
+        connectionWithServer.execute("selectmarkers");
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
+        /*mMap.getFocusedBuilding();
 
-        mMap.addMarker(new MarkerOptions()
-                .anchor(0.5f, 0.5f) // Anchors the marker on the bottom left
-                .icon(BitmapDescriptorFactory.fromResource(R.drawable.gai))
-                .position(new LatLng(41.889, -87.622))
-                .title("crash")
-                .snippet("какие то два чела втаранились")
-        );
+        CameraPosition cameraPosition = new CameraPosition.Builder()
+                .target()      // Sets the center of the map to Mountain View
+                .zoom(17)                   // Sets the zoom
+                .bearing(90)                // Sets the orientation of the camera to east
+                .tilt(30)                   // Sets the tilt of the camera to 30 degrees
+                .build();                   // Creates a CameraPosition from the builder
+        mMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));*/
 
         if (checkPermissions()) {
             setMyLocationEnabled();
         }
+    }
 
+    public void addMarkerToMap(String type, Double lat, Double lng, String desc){
+        int icon = 0;
+        if(type.equals("crash")){ icon = R.drawable.iconcrash;}
+        if(type.equals("rps")){ icon = R.drawable.iconrps;}
+        if(type.equals("road_work")){ icon = R.drawable.iconroadwork;}
+        if(type.equals("wheel")){ icon = R.drawable.iconwheel;}
+        if(type.equals("accum")){ icon = R.drawable.iconaccum;}
+        if(type.equals("fuel")){ icon = R.drawable.iconfuel;}
+        if(type.equals("stuck")){ icon = R.drawable.iconstuck;}
+
+        mMap.addMarker(new MarkerOptions()
+                .anchor(0.5f, 0.5f)
+                .icon(BitmapDescriptorFactory.fromResource(icon))
+                .position(new LatLng(lat, lng))
+                .title(type)
+                .snippet(desc)
+        );
     }
 
     private boolean checkPermissions() {
@@ -85,6 +115,15 @@ public class GeneralMapActivity extends FragmentActivity implements OnMapReadyCa
         }
     }
 
+    public void setResult(String line){
+        String[] parseLocation =  line.split(",");
+        for(int i = 0; i < parseLocation.length; i++){
+            String[] childrenParseLocation = parseLocation[i].split(":");
+            addMarkerToMap(childrenParseLocation[0],Double.parseDouble(childrenParseLocation[1]),
+                    Double.parseDouble(childrenParseLocation[2]), childrenParseLocation[3]);
+        }
+    }
+
     private void setMyLocationEnabled() {
         mMap.getUiSettings().setMyLocationButtonEnabled(true);
         if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION) !=
@@ -93,12 +132,5 @@ public class GeneralMapActivity extends FragmentActivity implements OnMapReadyCa
             return;
         }
         mMap.setMyLocationEnabled(true);
-
-        /*mMap.setOnMyLocationChangeListener(new GoogleMap.OnMyLocationChangeListener() {
-            @Override
-            public void onMyLocationChange(Location location) {
-
-            }
-        });*/
     }
 }

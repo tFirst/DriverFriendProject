@@ -7,6 +7,7 @@ import android.os.AsyncTask;
 import com.tfirst.driverfriendproject.MainMenuActivity;
 import com.tfirst.driverfriendproject.events.SendInformationActivity;
 import com.tfirst.driverfriendproject.gethelp.GetHelp;
+import com.tfirst.driverfriendproject.map.GeneralMapActivity;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
@@ -15,16 +16,23 @@ import java.io.OutputStream;
 import java.net.InetAddress;
 import java.net.Socket;
 
-/**
- * Created by Stanislav Trushin on 19.11.2016.
- */
-
 public class ConnectionWithServer extends AsyncTask<String, Void, String> {
     private boolean isRunning = true;
     private Activity activity;
+    private SendInformationActivity sia = null;
+    private GeneralMapActivity gma = null;
+    private GetHelp gh = null;
 
-    public ConnectionWithServer(Activity activity) {
-        this.activity = activity;
+    public ConnectionWithServer(SendInformationActivity sia) {
+        this.sia = sia;
+    }
+
+    public ConnectionWithServer(GeneralMapActivity gma) {
+        this.gma = gma;
+    }
+
+    public ConnectionWithServer(GetHelp gh) {
+        this.gh = gh;
     }
 
     @Override
@@ -55,7 +63,7 @@ public class ConnectionWithServer extends AsyncTask<String, Void, String> {
                     dataOutputStream.writeUTF(strings[0]);
                     dataOutputStream.flush();
 
-                    line =  dataInputStream.readUTF();
+                    line = dataInputStream.readUTF();
 
                     System.out.println("The server was very polite. It sent me this : " + line);
                     System.out.println("Looks like the server is pleased with us. Go ahead and enter more lines.");
@@ -71,7 +79,13 @@ public class ConnectionWithServer extends AsyncTask<String, Void, String> {
     }
 
     protected void onPostExecute(String line) {
-        activity.startActivity(new Intent(activity, MainMenuActivity.class));
+        if(gma != null){
+            gma.setResult(line);
+        } else if(gh != null) {
+            //
+        } else {
+            //
+        }
     }
 
 }
