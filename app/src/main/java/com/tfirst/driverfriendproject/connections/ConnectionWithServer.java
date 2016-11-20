@@ -65,7 +65,7 @@ public class ConnectionWithServer extends AsyncTask<String, Void, String> {
 
                     line = dataInputStream.readUTF();
 
-                    System.out.println("The server was very polite. It sent me this : " + line);
+                    System.out.println("The server was very polite. It sent me this: " + line);
                     System.out.println("Looks like the server is pleased with us. Go ahead and enter more lines.");
                     break;
                 }
@@ -82,9 +82,9 @@ public class ConnectionWithServer extends AsyncTask<String, Void, String> {
         if(gma != null){
             gma.setResult(line);
         } else if(gh != null) {
-            //
+            System.out.println("it is gh");
         } else {
-            //
+            System.out.println("it is sia");
         }
     }
 

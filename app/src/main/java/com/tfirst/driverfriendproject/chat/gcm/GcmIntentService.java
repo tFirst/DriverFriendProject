@@ -52,7 +52,7 @@ public class GcmIntentService  extends IntentService {
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_SINGLE_TOP | Intent.FLAG_ACTIVITY_CLEAR_TOP);
         PendingIntent contentIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
 
-        Bitmap icon = BitmapFactory.decodeResource(this.getResources(),
+        /*Bitmap icon = BitmapFactory.decodeResource(this.getResources(),
                 R.drawable.ic_pn_chat);
 
         NotificationCompat.Builder mBuilder =
@@ -67,6 +67,6 @@ public class GcmIntentService  extends IntentService {
 
         mBuilder.setContentIntent(contentIntent);
         Notification pnNotif = mBuilder.build();
-        mNotificationManager.notify(0, pnNotif);  // Set notification ID
+        mNotificationManager.notify(0, pnNotif);  // Set notification ID*/
     }
 }
